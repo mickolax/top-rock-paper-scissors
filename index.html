@@ -1,0 +1,92 @@
+<html>
+<body>
+
+</body>
+<script>
+
+
+
+
+    // randomly return one of Rock, Paper or Scissors  (Computers play)
+    function computerPlay() {
+        const options = ['rock', 'paper', 'scissors'];
+        let selection = options[Math.floor(Math.random() * options.length)];
+        return selection;
+    }
+
+
+
+    // play one round -> based on the selections of player and computer, determine winner with a return string
+    function playRound(playerSelection, computerSelection) {
+
+        let feedback;
+        let result;
+
+        // pre-created strings for creating the return / result string
+        const win = 'Player wins!';
+        const loss = 'Computer wins!';
+        const tie = 'A boring tie';
+        
+        const rockWin = ' Rock beats scissors';
+        const paperWin = ' Paper beats rock';
+        const scissorsWin = ' Scissors beats paper';
+ 
+        // check for a tie
+        if (playerSelection === computerSelection) {
+            result = tie;
+        } 
+        
+        // rock selected by player
+        else if (playerSelection === 'rock') {
+            if (computerSelection === 'paper') {
+                result = loss + paperWin;
+            } else {
+                result = win + rockWin;    
+            }
+        } 
+        // paper selected by player
+        else if (playerSelection === 'paper') {
+            if (computerSelection === 'scissors') {
+                result = loss + scissorsWin;
+            } else {
+                result = win + paperWin;
+            }
+        } 
+        // scissors selected by player
+        else if (playerSelection === 'scissors') {
+            if (computerSelection === 'rock') {
+                result = loss + rockWin;
+            } else {
+                result = win + scissorsWin;
+            }
+        }
+
+        return result;
+    
+    }
+
+
+    // play a series of rounds aka a game
+    // TODO: 
+    // - how to handle errors?
+    // - 
+
+
+    function game() {
+
+        for (var i = 0; i < 5; i++) {
+
+            //Make the selections    
+            playerSelection = prompt('Make a selection:', '').toLowerCase();
+            const computerSelection = computerPlay();
+
+            playRound(playerSelection, computerSelection);
+            console.log(playRound(playerSelection,computerSelection));
+        }
+    }
+
+        
+
+
+</script>
+</html>
