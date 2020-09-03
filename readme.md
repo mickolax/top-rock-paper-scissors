@@ -2,6 +2,11 @@ The Odin Project - Rock Paper Scissors game
 
 What has been done?
 
+3.9.2020
+- Updated the project to match the requirements of DOM Manipulation lesson:
+    - UI for the games with selection buttons
+    - Scoreboard that is updated with the buttons / UI
+
 30.8.2020
 - Created the basic functionalities of the rock paper scissors game including:
     - random selection for the computer -> computerPlay()
